@@ -7,7 +7,7 @@ exports.run = (client, message, args) => {
 	voiceChannel
       .join()
       .then(function (connection) {
-        let stream = YoutubeStream(args[0])
+        let stream = YoutubeStream(args)
         stream.on('error', function () {
           message.reply("Je n'ai pas réussi à lire cette vidéo :(")
           connection.disconnect()
