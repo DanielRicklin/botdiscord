@@ -1,9 +1,9 @@
 const YoutubeStream = require('ytdl-core');
 
 exports.run = (client, message, args) => {
-	let voiceChannel = message.guild.channels
-      .filter(function (channel) { return channel.type === 'voice' })
-	  .first();
+	let voiceChannel = message.guild.channels.find(args[1]);
+    //   .filter(function (channel) { return channel.type === 'voice' })
+	//   .first();
 	voiceChannel
       .join()
       .then(function (connection) {
