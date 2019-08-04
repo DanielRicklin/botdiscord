@@ -22,6 +22,7 @@
     "discord.js": "^11.5.1",
     "dotenv": "^8.0.0",
     "node-cron": "^2.0.3",
+    "node-opus": "^0.3.2",
     "ytdl-core": "^0.29.5"
   },
   "devDependencies": {

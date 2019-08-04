@@ -3,11 +3,10 @@ const cron = require("node-cron");
 const fs = require("fs");
 const YoutubeStream = require('ytdl-core');
 const client = new Discord.Client();
-// require('dotenv').config();
 
 
 client.on("ready", message => {
-	// console.log("hello!");
+	console.log("Working");
 	// cron.schedule('29 23 * * *', () => {
 	// setInterval(() => {
 	// 	let date = Date.now();
@@ -40,14 +39,5 @@ client.on("message", message => {
         console.error(err);
     }
 });
-
-// let scheduledMessage = new cron.CronJob('00 49 22 * * *', () => {
-// 	// This runs every day at 10:30:00, you can do anything you want
-// 	const channel = client.channels.find('name', 'flood');
-// 	channel.send("@everyone C'est l'heure de l'apéro !!");
-//   });
-  
-// // When you want to start it, use:
-// scheduledMessage.start()
 
 client.login(client.config.token);
