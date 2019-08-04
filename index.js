@@ -6,11 +6,8 @@ const client = new Discord.Client();
 client.on("ready", message => {
 	console.log("Working");
 	// cron.schedule('29 23 * * *', () => {
-	// setInterval(() => {
-	// 	let date = Date.now();
-	// 	// const channel = client.channels.find('name', 'flood');
-	// 	// channel.send("@everyone C'est l'heure de l'apérooo !!");
-	// }, 600000); //86400000
+	// 	const channel = client.channels.find('name', 'flood');
+	// 	channel.send("@everyone C'est l'heure de l'apérooo !!");
 	// });
 });
 
