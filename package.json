@@ -1,0 +1,30 @@
+{
+  "name": "botdiscord",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanielRicklin/botdiscord.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DanielRicklin/botdiscord/issues"
+  },
+  "homepage": "https://github.com/DanielRicklin/botdiscord#readme",
+  "dependencies": {
+    "cron": "^1.7.1",
+    "discord.js": "^11.5.1",
+    "dotenv": "^8.0.0",
+    "node-cron": "^2.0.3",
+    "ytdl-core": "^0.29.5"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  }
+}
