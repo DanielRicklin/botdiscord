@@ -14,6 +14,8 @@ client.on("ready", message => {
 client.config = require("./config/config.json");
 client.commands = require("./config/commands.json");
 
+global.servers = {};
+
 client.on("message", message => {
 	if (message.author.bot) return;
 	if (!message.content.startsWith(client.config.prefix)) return;
