@@ -3,5 +3,5 @@ exports.run = (client, message, args) => {
 	if (message.guild.voiceConnection)
 		message.guild.voiceConnection.disconnect();
 	else
-		message.reply("Connecte toi à un channel vocal pour faire ça !");
+		message.reply("Je dois être connecté à un channel vocal pour me faire kick !!");
 }
