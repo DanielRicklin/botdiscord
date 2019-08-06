@@ -22,7 +22,11 @@ Pour le code, la routine quoi
 git clone https://github.com/DanielRicklin/botdiscord.git
 
 cd botdiscord && npm install
+
+mv config/config.copy.json config.json
 ```
+
+Modifiez bien sûr le contenu de config.json sinon va y avoir un problème 😂
 ## Authors
 
 * **Daniel Ricklin** - *Initial work* - [DanielRicklin](https://github.com/DanielRicklin)
