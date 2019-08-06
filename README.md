@@ -21,13 +21,11 @@ Pour le code, la routine quoi
 ```bash
 git clone https://github.com/DanielRicklin/botdiscord.git
 
-npm install
+cd botdiscord && npm install
 ```
 ## Authors
 
 * **Daniel Ricklin** - *Initial work* - [DanielRicklin](https://github.com/DanielRicklin)
-
-Les gens qu'on aidé [contributors](https://github.com/your/project/contributors) who participated in this project.
 
 ## License
 
