@@ -6,7 +6,7 @@ Voici le code du bot du discord de la guilde DBB
 
 Sur la machine il faut impérativement ffmpeg, donc installez le 😂
 
-```bash
+```sh
 sudo apt update
 
 sudo add-apt-repository ppa:jonathonf/ffmpeg-4
@@ -18,7 +18,7 @@ sudo apt install ffmpeg
 
 Pour le code, la routine quoi
 
-```bash
+```sh
 git clone https://github.com/DanielRicklin/botdiscord.git
 
 cd botdiscord && npm install
