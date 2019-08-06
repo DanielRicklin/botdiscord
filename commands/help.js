@@ -13,6 +13,18 @@ exports.run = (client, message, args) => {
 		  {
 			name: "!play [lien youtube]",
 			value: "Pour des vocaux en musique"
+		  },
+		  {
+			name: "!leave",
+			value: "Pour kick le bot du channel vocal"
+		  },
+		  {
+			name: "!compo [nom du monstre]",
+			value: "Donne la/les compo(s) pour le monstre voulu"
+		  },
+		  {
+			name: "!liste",
+			value: "Donne la liste des monstres"
 		  }
 		],
 		timestamp: new Date(),

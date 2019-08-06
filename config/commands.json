@@ -2,5 +2,7 @@
 	"ping",
 	"play",
 	"help",
-	"leave"
+	"leave",
+	"compo",
+	"liste"
 ]

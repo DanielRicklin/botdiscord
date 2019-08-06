@@ -8,26 +8,28 @@ client.on("ready", message => {
 	// cron.schedule('29 23 * * *', () => {
 	// 	const channel = client.channels.find('name', 'flood');
 	// 	channel.send("@everyone C'est l'heure de l'apérooo !!");
-	// });
+    // });
+    client.user.setStatus('available')
+    client.user.setPresence({
+        game: {
+            name: 'Lords Mobile',
+            type: "PLAYING"
+        }
+    });
 });
 
 client.config = require("./config/config.json");
 client.commands = require("./config/commands.json");
 
-global.servers = {};
-
 client.on("message", message => {
-	if (message.author.bot) return;
+	// if (message.author.bot) return;
 	if (!message.content.startsWith(client.config.prefix)) return;
-	
 
     let command = message.content.split(" ")[0];
     command = command.slice(client.config.prefix.length);
     let args = message.content.split(" ").slice(1);
 
-    if (client.commands.indexOf(command) == -1) {
-        return;
-    }
+    if (client.commands.indexOf(command) == -1) return;
 
     try {
         let commandFile = require(`./commands/${command}.js`);
