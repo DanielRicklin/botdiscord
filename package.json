@@ -22,12 +22,9 @@
     "cron": "^1.7.1",
     "discord.js": "^11.5.1",
     "dotenv": "^8.0.0",
-    "ffmpeg-binaries": "^4.0.0",
-    "mysql": "^2.17.1",
     "mysql2": "^1.6.5",
     "node-cron": "^2.0.3",
     "node-opus": "^0.3.2",
-    "opusscript": "0.0.6",
     "sequelize": "^5.12.3",
     "ytdl-core": "^0.29.5"
   },
