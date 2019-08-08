@@ -1,7 +1,19 @@
 const Discord = require('discord.js');
+const Sequelize = require('sequelize');
 // const cron = require("node-cron");
 const client = new Discord.Client();
 
+client.config = require("./config/config.json");
+client.commands = require("./config/commands.json");
+client.sql = new Sequelize('dbbot', client.config.user_BDD, client.config.password_BDD, {
+    host: client.config.host_BDD,
+    dialect: 'mysql',
+    pool: {
+        max: 5,
+        min: 0,
+        idle: 10000
+    }
+});
 
 client.on("ready", message => {
 	console.log("Working");
@@ -18,8 +30,6 @@ client.on("ready", message => {
     });
 });
 
-client.config = require("./config/config.json");
-client.commands = require("./config/commands.json");
 
 client.on("message", message => {
 	// if (message.author.bot) return;

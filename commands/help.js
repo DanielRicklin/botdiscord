@@ -25,7 +25,15 @@ exports.run = (client, message, args) => {
 		  {
 			name: "!liste",
 			value: "Donne la liste des monstres"
-		  }
+		  },
+		  {
+			name: "!mojito [liste de noms]",
+			value: "hehe que les R4 on le pouvoir de donner des mojitos"
+		  }/*,
+		  {
+			name: "!joke",
+			value: "Incoming et !postjoke aussi"
+		  }*/
 		],
 		timestamp: new Date(),
 		footer: {

@@ -5,7 +5,7 @@ exports.run = (client, message, args) => {
 	
 	fs.access(path, fs.F_OK, (err) => {
 		if (err) {
-		  message.reply("Ce monstres n'existe pas, voilà la liste.");
+		  message.reply("Ce monstre n'existe pas, voilà la liste.");
 		  message.channel.send('!liste');
 		  return;
 		}	
