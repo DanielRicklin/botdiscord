@@ -1,3 +1,6 @@
 exports.run = (client, message, args) => {
-    message.channel.send("Coucou <@" + message.author.id + ">");
+    if(message.author.username === 'laguerriere(dbb)')
+        message.channel.send("Coucou moi du futur");
+    else
+        message.channel.send("Coucou <@" + message.author.id + ">");
 }
