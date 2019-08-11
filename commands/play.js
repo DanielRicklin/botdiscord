@@ -1,4 +1,5 @@
 const YoutubeStream = require('ytdl-core');
+const streamOptions = { seek: 0, volume: 0 };
 
 exports.run = (client, message, args) => {
 	message.member.voiceChannel
@@ -10,7 +11,7 @@ exports.run = (client, message, args) => {
 				connection.disconnect()
 			});
 			connection
-				.playStream(stream, {seek: 0, volume: 0.2})
+				.playStream(stream, streamOptions)
 				.on('end', function () {
 					connection.disconnect()
 				});
