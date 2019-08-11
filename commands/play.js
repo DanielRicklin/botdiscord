@@ -1,5 +1,5 @@
 const YoutubeStream = require('ytdl-core');
-const streamOptions = { seek: 0, volume: 0.03 };
+const streamOptions = { seek: 0, volume: 0.04 };
 
 exports.run = (client, message, args) => {
 	message.member.voiceChannel
