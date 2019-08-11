@@ -3,6 +3,7 @@ const Sequelize = require('sequelize');
 // const cron = require("node-cron");
 const client = new Discord.Client();
 
+client.flag_mojito = 0;
 client.config = require("./config/config.json");
 client.commands = require("./config/commands.json");
 client.sql = new Sequelize('dbbot', client.config.user_BDD, client.config.password_BDD, {
