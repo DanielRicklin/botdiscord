@@ -10,7 +10,7 @@ exports.run = (client, message, args) => {
 				connection.disconnect()
 			});
 			connection
-				.playStream(stream)
+				.playStream(stream, {seek: 0, volume: 0.2})
 				.on('end', function () {
 					connection.disconnect()
 				});
