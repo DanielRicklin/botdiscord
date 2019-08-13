@@ -2,16 +2,21 @@ const Sequelize = require('sequelize');
 
 exports.run = (client, message, args) => {
 	if(args[0]){
-		let joke = client.sql.define('joke', {
-			joke: {
-				type: Sequelize.STRING
+		let joke = client.sql.define('joke',
+			{
+				joke: {
+					type: Sequelize.STRING
+				},
+				auteur: {
+					type: Sequelize.STRING
+				}
+			},
+			{
+				tableName: 'jokes'
 			}
-		},
-		{
-			freezeTableName: true
-		});
+		);
 	
-		joke.create({ joke: args[0]})
+		joke.create({ joke: args.join(' '), auteur: message.author.id})
 			.then(() => {
 				message.reply("Normalement c'est enregistré 😂");
 			})
