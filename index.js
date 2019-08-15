@@ -5,15 +5,15 @@ const client = new Discord.Client();
 
 client.config = require("./config/config.json");
 client.commands = require("./config/commands.json");
-client.sql = new Sequelize('dbbot', client.config.user_BDD, client.config.password_BDD, {
-    host: client.config.host_BDD,
-    dialect: 'mysql',
-    pool: {
-        max: 5,
-        min: 0,
-        idle: 10000
+client.sql = new Sequelize(
+    'dbbot',
+    client.config.user_BDD,
+    client.config.password_BDD,
+    {
+        host: client.config.host_BDD,
+        dialect: 'mysql'
     }
-});
+);
 
 client.on("ready", message => {
 	console.log("Working");
