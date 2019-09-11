@@ -32,7 +32,6 @@ client.on("ready", message => {
 
 
 client.on("message", message => {
-	// if (message.author.bot) return;
 	if (!message.content.startsWith(client.config.prefix)) return;
 
     let command = message.content.split(" ")[0];
