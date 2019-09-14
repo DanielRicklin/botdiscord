@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const Sequelize = require('sequelize');
-// const cron = require("node-cron");
+const cron = require("node-cron");
 const client = new Discord.Client();
 
 client.config = require("./config/config.json");
@@ -15,12 +15,19 @@ client.sql = new Sequelize(
     }
 );
 
+cron.schedule('00 20 * * *', () => {
+    client.channels.get('526533937171005449').send('@here Aperoooo' + client.emojis.get("622200544819150848").toString());
+    console.log('heyyyyyy')
+});
+
+// cron.schedule('* * * * *', () => {
+//     client.channels.get('526533937171005449').send('@here Aperoooo' + client.emojis.get("622200544819150848").toString());
+//     console.log('heyyyyyy')
+// });
+
+
 client.on("ready", message => {
 	console.log("Working");
-	// cron.schedule('29 23 * * *', () => {
-	// 	const channel = client.channels.find('name', 'flood');
-	// 	channel.send("@everyone C'est l'heure de l'apérooo !!");
-    // });
     client.user.setStatus('available')
     client.user.setPresence({
         game: {
@@ -28,6 +35,7 @@ client.on("ready", message => {
             type: "PLAYING"
         }
     });
+    // client.channels.get('607912705088552962').send('!vd'); //621385021743169536
 });
 
 
