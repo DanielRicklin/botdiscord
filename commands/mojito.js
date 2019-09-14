@@ -1,4 +1,8 @@
+
 exports.run = (client, message, args) => {
+	function emoji(id){
+		return client.emojis.get(id).toString();
+	}
 	let messageResponse = "";
 	if(message.author.username === 'GrosStaff'){
 		message.channel.fetchMessages({ limit: 3 })
@@ -18,7 +22,7 @@ exports.run = (client, message, args) => {
 			});
 		}
 		else
-			message.reply('Voilà un mojito tout frais :tropical_drink:'); //:champagne_glass::tumbler_glass::beer::cocktail::wine_glass:
+			message.reply('Voilà un mojito tout frais ' + emoji("622200544819150848") + emoji("622200544819150848"));
 	} else {
 		message.reply("Bois de l'eau");
 	}
