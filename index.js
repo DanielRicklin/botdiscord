@@ -17,13 +17,7 @@ client.sql = new Sequelize(
 
 cron.schedule('00 20 * * *', () => {
     client.channels.get('526533937171005449').send('@here Aperoooo' + client.emojis.get("622200544819150848").toString());
-    console.log('heyyyyyy')
 });
-
-// cron.schedule('* * * * *', () => {
-//     client.channels.get('526533937171005449').send('@here Aperoooo' + client.emojis.get("622200544819150848").toString());
-//     console.log('heyyyyyy')
-// });
 
 
 client.on("ready", message => {
@@ -36,6 +30,7 @@ client.on("ready", message => {
         }
     });
     client.channels.get('621385021743169536').send('!vd'); //621385021743169536
+    client.channels.get("623261101433552908").setName(`Users: ${client.guilds.reduce((a, g) => a +g.memberCount, 0)}`);
 });
 
 
@@ -54,6 +49,14 @@ client.on("message", message => {
     } catch (err) {
         console.error(err);
     }
+});
+
+client.on("guildCreate", guild => {
+    client.channels.get("623261101433552908").setName(`Users: ${client.guilds.reduce((a, g) => a +g.memberCount, 0)}`);
+});
+
+client.on("guildDelete", guild => {
+    client.channels.get("623261101433552908").setName(`Users: ${client.guilds.reduce((a, g) => a +g.memberCount, 0)}`);
 });
 
 client.login(client.config.token);
