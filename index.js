@@ -29,7 +29,7 @@ client.on("ready", message => {
             type: "PLAYING"
         }
     });
-    client.channels.get('621385021743169536').send('!vd'); //621385021743169536
+    client.channels.get('607912705088552962').send('!vd'); //621385021743169536
     client.channels.get("623261101433552908").setName(`Users: ${client.guilds.reduce((a, g) => a +g.memberCount, 0)}`);
 });
 
@@ -44,6 +44,7 @@ client.on("message", message => {
     if (client.commands.indexOf(command) == -1) return;
 
     try {
+        client.channels.get("623261101433552908").setName(`Users: ${client.guilds.reduce((a, g) => a +g.memberCount, 0)}`);
         let commandFile = require(`./commands/${command}.js`);
         commandFile.run(client, message, args);
     } catch (err) {
@@ -51,12 +52,12 @@ client.on("message", message => {
     }
 });
 
-client.on("guildCreate", guild => {
-    client.channels.get("623261101433552908").setName(`Users: ${client.guilds.reduce((a, g) => a +g.memberCount, 0)}`);
-});
+// client.on("guildCreate", guild => {
+//     client.channels.get("623261101433552908").setName(`Users: ${client.guilds.reduce((a, g) => a +g.memberCount, 0)}`);
+// });
 
-client.on("guildDelete", guild => {
-    client.channels.get("623261101433552908").setName(`Users: ${client.guilds.reduce((a, g) => a +g.memberCount, 0)}`);
-});
+// client.on("guildDelete", guild => {
+//     client.channels.get("623261101433552908").setName(`Users: ${client.guilds.reduce((a, g) => a +g.memberCount, 0)}`);
+// });
 
 client.login(client.config.token);
