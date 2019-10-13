@@ -29,7 +29,7 @@ client.on("ready", message => {
             type: "PLAYING"
         }
     });
-    client.channels.get('607912705088552962').send('!vd'); //621385021743169536
+    client.channels.get('621385021743169536').send('!vd'); //621385021743169536 //607912705088552962
     client.channels.get("623261101433552908").setName(`Users: ${client.guilds.reduce((a, g) => a +g.memberCount, 0)}`);
 });
 
