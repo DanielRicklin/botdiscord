@@ -14,7 +14,7 @@ exports.run = (client, message, args) => {
 	// 		})
 	// 		.catch(console.error);
 	// 	}
-	if((message.member.roles.find(r => r.id === "526423192873599022") || message.member.roles.find(r => r.id === "526422194339708958") || message.member.roles.find(r => r.id === "625605665024638977")) && args[0] != "<@607653983326306335>"){
+	if((message.member.roles.find(r => r.id === "526423192873599022") || message.member.roles.find(r => r.id === "526422194339708958") || message.member.roles.find(r => r.id === "625605665024638977")) && args[0] != "<@607653983326306335>"  && message.author.id !== "383747871104827393"){
 		if(args[0]){
 			args.forEach(arg => {
 				message.channel.send(arg + ' Voilà un mojito tout frais ' + emoji("622200544819150848"))

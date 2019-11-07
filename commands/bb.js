@@ -8,9 +8,10 @@ exports.run = (client, message, args) => {
 		if(moment(bb[key]).isBefore(moment()))
 			bb.slice(key, 1);
 	}
-	if(args[0] && args[1]){
+	if(args[0]){
 		// args.forEach(arg => {});
 		if(args[0] == '24' || args[0] == '24h'){
+			// message.author ? message.author : args[1]
 			bb[args[1]] = moment().add(1, 'days');
 		} else if(args[0] == '3' || args[0] ==  '3j') {
 			bb[args[1]] = moment().add(3, 'days');
