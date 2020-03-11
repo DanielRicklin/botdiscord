@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const Sequelize = require('sequelize');
-const cron = require("node-cron");
+//const cron = require("node-cron");
 const client = new Discord.Client();
 
 client.config = require("./config/config.json");
@@ -15,9 +15,9 @@ client.sql = new Sequelize(
     }
 );
 
-cron.schedule('00 20 * * *', () => {
-    client.channels.get('526533937171005449').send('@here Aperoooo' + client.emojis.get("622200544819150848").toString());
-});
+//cron.schedule('00 20 * * *', () => {
+//    client.channels.get('526533937171005449').send('@here Aperoooo' + client.emojis.get("622200544819150848").toString());
+//});
 
 
 client.on("ready", message => {
@@ -29,8 +29,6 @@ client.on("ready", message => {
             type: "PLAYING"
         }
     });
-    client.channels.get('621385021743169536').send('!vd'); //621385021743169536 //607912705088552962
-    client.channels.get("623261101433552908").setName(`Users: ${client.guilds.reduce((a, g) => a +g.memberCount, 0)}`);
 });
 
 
@@ -44,7 +42,7 @@ client.on("message", message => {
     if (client.commands.indexOf(command) == -1) return;
 
     try {
-        client.channels.get("623261101433552908").setName(`Users: ${client.guilds.reduce((a, g) => a +g.memberCount, 0)}`);
+//        client.channels.get("623261101433552908").setName(`Users: ${client.guilds.reduce((a, g) => a +g.memberCount, 0)}`);
         let commandFile = require(`./commands/${command}.js`);
         commandFile.run(client, message, args);
     } catch (err) {
