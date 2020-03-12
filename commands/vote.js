@@ -3,13 +3,14 @@ exports.run = async (client, message, args) => {
 
 	let pseudo = message.author.lastMessage.member.nickname ? message.author.lastMessage.member.nickname : message.author.username;
 
-	let msg = await message.channel.send({embed: {
-		color: 0xffffff,
-		title: args.join(' '),
-		footer: {
-			text: `by ${pseudo}`
+	let msg = await message.channel.send({
+		embed: {
+			color: 0xffffff,
+			title: args.join(' '),
+			footer: {
+				text: `by ${pseudo}`
+			}
 		}
-	  }
 	});
 
 	await msg.react('✅');

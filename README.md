@@ -23,7 +23,7 @@ git clone https://github.com/DanielRicklin/botdiscord.git
 
 cd botdiscord && npm install
 
-mv config/config.copy.json config.json
+cp config/config.copy.json config/config.json
 ```
 
 Modifiez bien sûr le contenu de config.json sinon va y avoir un problème 😂

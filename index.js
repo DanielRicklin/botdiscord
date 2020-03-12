@@ -1,11 +1,14 @@
 const Discord = require('discord.js');
 const Sequelize = require('sequelize');
 //const cron = require("node-cron");
+const connectDB = require('./config/db.js')
 const client = new Discord.Client();
+
+connectDB();
 
 client.config = require("./config/config.json");
 client.commands = require("./config/commands.json");
-client.sql = new Sequelize(
+/*client.sql = new Sequelize(
     'dbbot',
     client.config.user_BDD,
     client.config.password_BDD,
@@ -13,7 +16,7 @@ client.sql = new Sequelize(
         host: client.config.host_BDD,
         dialect: 'mysql'
     }
-);
+);*/
 
 //cron.schedule('00 20 * * *', () => {
 //    client.channels.get('526533937171005449').send('@here Aperoooo' + client.emojis.get("622200544819150848").toString());
@@ -21,7 +24,7 @@ client.sql = new Sequelize(
 
 
 client.on("ready", message => {
-	console.log("Working");
+    console.log("Working");
     client.user.setStatus('available')
     client.user.setPresence({
         game: {
@@ -33,7 +36,7 @@ client.on("ready", message => {
 
 
 client.on("message", message => {
-	if (!message.content.startsWith(client.config.prefix)) return;
+    if (!message.content.startsWith(client.config.prefix)) return;
 
     let command = message.content.split(" ")[0];
     command = command.slice(client.config.prefix.length);
@@ -42,7 +45,7 @@ client.on("message", message => {
     if (client.commands.indexOf(command) == -1) return;
 
     try {
-//        client.channels.get("623261101433552908").setName(`Users: ${client.guilds.reduce((a, g) => a +g.memberCount, 0)}`);
+        //        client.channels.get("623261101433552908").setName(`Users: ${client.guilds.reduce((a, g) => a +g.memberCount, 0)}`);
         let commandFile = require(`./commands/${command}.js`);
         commandFile.run(client, message, args);
     } catch (err) {
