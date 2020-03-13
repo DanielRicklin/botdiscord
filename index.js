@@ -28,8 +28,8 @@ client.on("ready", message => {
     client.user.setStatus('available')
     client.user.setPresence({
         game: {
-            name: 'Lords Mobile',
-            type: "PLAYING"
+            name: '!!help',
+            type: 0
         }
     });
 });
